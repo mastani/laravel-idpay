@@ -1,0 +1,41 @@
+{
+    "name": "mastani/laravel-idpay",
+    "description": "IDPay payment gateway for Laravel https://idpay.ir",
+	"keywords": [
+        "idpay",
+        "gateway",
+        "payment",
+        "laravel"
+    ],
+    "type": "library",
+	"homepage": "https://github.com/mastani/laravel-idpay",
+	"license": "MIT",
+    "authors": [
+        {
+            "name": "Amin Mastani",
+            "email": "amin.mastani@yahoo.com"
+        }
+    ],
+    "require": {
+        "illuminate/contracts": "5.*",
+        "illuminate/support": "5.*"
+	},
+    "require-dev": {
+        "phpunit/phpunit" : "7.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "mastani\\IDPay\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "mastani\\IDPay\\IDPayServiceProvider"
+            ],
+            "aliases": {
+                "GoogleStaticMap": "mastani\\IDPay\\IDPayFacade"
+            }
+        }
+    }
+}
