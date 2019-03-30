@@ -75,7 +75,8 @@ $response = $pay->setApiKey('IDPay API Key')
             ->request();
             
 if ($response->is_successful) {
-    // save payment details to database
+    // save payment details to database here
+    
     return redirect()->to($response->link);
 } else {
     // handle error
@@ -134,7 +135,8 @@ $response = $verify->setApiKey('IDPay API Key')
 if ($response->is_successful) {
     echo 'Order: ' . $response->order_id;
     echo 'Card Number: ' . $response->payment->card_no;
-    // handle user credit
+    
+    // handle user credit here
 } else {
     // handle error
 }
@@ -179,7 +181,8 @@ $response = $inquiry->setApiKey('IDPay API Key')
             ->request();
             
 if ($response->is_successful) {
-    // success
+    // handle success here
+    
     echo 'Order: ' . $response->order_id;
     echo 'Card Number: ' . $response->payment->card_no;
 } else {
