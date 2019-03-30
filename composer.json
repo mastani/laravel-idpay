@@ -34,7 +34,7 @@
                 "mastani\\IDPay\\IDPayServiceProvider"
             ],
             "aliases": {
-                "GoogleStaticMap": "mastani\\IDPay\\IDPayFacade"
+                "IDPay": "mastani\\IDPay\\IDPayFacade"
             }
         }
     }
