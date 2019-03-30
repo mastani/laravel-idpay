@@ -3,6 +3,7 @@
 namespace mastani\IDPay;
 
 class IDPayPayment extends IDPay {
+    public const URL_PAYMENT = 'https://api.idpay.ir/v1.1/payment';
 
     private $orderID = '';
     private $amount = 0;
@@ -116,7 +117,7 @@ class IDPayPayment extends IDPay {
         if (strlen($this->orderID) == 0) die('order_id is required.');
         if ($this->amount == 0) die('amount is required.');
 
-        $response = parent::call([
+        $response = parent::call(self::URL_PAYMENT, [
             'order_id' => $this->orderID,
             'amount' => $this->amount,
             'name' => $this->name,

@@ -3,9 +3,6 @@
 namespace mastani\IDPay;
 
 class IDPay {
-    const URL_PAYMENT = 'https://api.idpay.ir/v1.1/payment';
-    const URL_INQUIRY = 'https://api.idpay.ir/v1.1/payment/inquiry';
-
     private $apiKey;
     private $sandbox = false;
 
@@ -36,7 +33,7 @@ class IDPay {
         return $this;
     }
 
-    public function call($params) {
+    public function call($url, $params) {
         $header = array(
             'Content-Type: application/json',
             'X-API-KEY:' . $this->apiKey,
@@ -44,7 +41,7 @@ class IDPay {
         );
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, self::URL_PAYMENT);
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
