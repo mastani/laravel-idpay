@@ -207,10 +207,10 @@ if ($response->is_successful) {
 [date] => 1553954369
 [payer] => stdClass Object
 (
-    [name] =>
-    [phone] =>
-    [mail] =>
-    [desc] =>
+    [name] => Amin
+    [phone] => 09353361569
+    [mail] => amin@mail.com
+    [desc] => Pay for bronze account
 )
 [payment] => stdClass Object
 (
