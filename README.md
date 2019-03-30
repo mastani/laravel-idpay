@@ -76,7 +76,7 @@ $response = $pay->setApiKey('IDPay API Key')
             
 if ($response->is_successful) {
     // save payment details to database
-    header("Location: " . $response->link);
+    return redirect()->to($response->link);
 } else {
     // handle error
 }
@@ -99,6 +99,27 @@ if ($response->is_successful) {
 ### Handle callback result
 ```code
 $callback = new IDPayPaymentCallback($_POST);
+
+if ($callback->is_successful) {
+    echo 'Order: ' . $callback->orderId;
+    echo 'Card Number: ' . $callback->cardNO;
+
+    // verify payment with next method
+} else {
+    // handle error
+}
+```
+##### Successful response
+```code
+[is_successful] => false
+[result] => "در انتظار تایید پرداخت"
+[status] => "10"
+[trackID] => "46868"
+[ID] => "91cb30a55598f6dbdd0d4d7ad9613d88"
+[orderID] => "10000"
+[amount] => "50000"
+[cardNO] => "123456******1234"
+[date] => "1553961021"
 ```
 
 ### Verify payment
